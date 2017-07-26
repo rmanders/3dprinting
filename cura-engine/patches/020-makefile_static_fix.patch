@@ -1,0 +1,15 @@
+--- a/Makefile
++++ b/Makefile
+@@ -47,10 +47,10 @@ else
+ 	ifeq ($(UNAME), Linux)
+ 		OPEN_HTML=firefox
+ 		ifeq ($(BUILD_TYPE),DEBUG)
+-			LDFLAGS += --static
++			LDFLAGS +=
+ 		else
+ 			CFLAGS += -flto
+-			LDFLAGS += --static -flto
++			LDFLAGS += -flto
+ 		endif
+ 	endif
+ 	ifeq ($(UNAME), OpenBSD)

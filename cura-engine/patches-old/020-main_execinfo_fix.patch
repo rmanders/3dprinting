@@ -1,0 +1,22 @@
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -4,8 +4,10 @@
+ #include <string.h>
+ #include <sys/time.h>
+ #include <signal.h>
+-#if defined(__linux__) || (defined(__APPLE__) && defined(__MACH__))
++#ifdef __UCLIBC___
+ #include <execinfo.h>
++#endif
++#if defined(__linux__) || (defined(__APPLE__) && defined(__MACH__))
+ #include <sys/resource.h>
+ #endif
+ #include <stddef.h>
+@@ -335,4 +337,5 @@ int main(int argc, char **argv)
+     }
+     
+     return 0;
+-}
+\ No newline at end of file
++}
++

@@ -1,0 +1,30 @@
+--- a/src/MeshGroup.cpp
++++ b/src/MeshGroup.cpp
+@@ -87,7 +87,12 @@ bool loadMeshSTL_binary(Mesh* mesh, cons
+     }
+     if (reported_face_count != face_count)
+     {
+-        logWarning("Face count reported by file (%s) is not equal to actual face count (%s). File could be corrupt!\n", std::to_string(reported_face_count).c_str(), std::to_string(face_count).c_str());
++	std::stringstream ss1;
++	std::stringstream ss2;
++
++	ss1 << reported_face_count;
++	ss2 << face_count;
++        logWarning("Face count reported by file (%s) is not equal to actual face count (%s). File could be corrupt!\n", ss1.str().c_str(), ss2.str().c_str());
+     }
+ 
+     //For each face read:
+--- a/src/settingRegistry.cpp
++++ b/src/settingRegistry.cpp
+@@ -209,7 +209,10 @@ int SettingRegistry::loadJSONsettingsFro
+             int train_nr = 0;
+             for (rapidjson::Value::ConstValueIterator train_iterator = trains.Begin(); train_iterator != trains.End(); ++train_iterator)
+             {
+-                SettingConfig& child = category_trains.getOrCreateChild(std::to_string(train_nr), std::string("Extruder ") + std::to_string(train_nr));
++		std::stringstream ss1;
++		ss1 << train_nr;
++		 
++                SettingConfig& child = category_trains.getOrCreateChild(ss1.str(), std::string("Extruder ") + ss1.str());
+                 const rapidjson::Value& train = *train_iterator;
+                 for (rapidjson::Value::ConstMemberIterator setting_iterator = train.MemberBegin(); setting_iterator != train.MemberEnd(); ++setting_iterator)
+                 {

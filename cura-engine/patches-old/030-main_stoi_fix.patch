@@ -1,0 +1,11 @@
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -76,7 +76,7 @@ void connect(int argc, char **argv)
+     if (ip_port.find(':') != std::string::npos)
+     {
+         ip = ip_port.substr(0, ip_port.find(':'));
+-        port = std::stoi(ip_port.substr(ip_port.find(':') + 1).data());
++        port = atoi(ip_port.substr(ip_port.find(':') + 1).data());
+     }
+ 
+     
