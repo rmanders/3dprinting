@@ -1,12 +1,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=CuraEngine
-PKG_VERSION:=14.12.1
-PKG_RELEASE=1
+PKG_VERSION:=15.04.6
+PKG_RELEASE=2
 
 PKG_SOURCE_URL:=https://github.com/Ultimaker/CuraEngine/archive/
 PKG_SOURCE:=$(PKG_VERSION).tar.gz
-PKG_MIRROR_MD5SUM:=4e975b070d575eba826c3d46f1d9f718
+PKG_MIRROR_MD5SUM:=acadbcb77d32e30716d09624b9c6d6f1
 
 PKG_MAINTAINER:=polar3d
 
