@@ -9,7 +9,8 @@ PKG_SOURCE:=$(PKG_VERSION).tar.gz
 PKG_MIRROR_MD5SUM:=9a2d3f3835b8b1f1e8dbaae154fb20e8
 
 PKG_MAINTAINER:=polar3d
-PKG_BUILD_DEPENDS:=python
+PKG_BUILD_DEPENDS:=python python-setuptools
+PKG_BUILD_DIR:=$(BUILD_DIR)/OctoPrint-$(PKG_VERSION)
 
 include $(INCLUDE_DIR)/package.mk
 $(call include_mk, python-package.mk)
