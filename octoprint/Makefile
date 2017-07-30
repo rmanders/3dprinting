@@ -20,7 +20,7 @@ define Package/octoprint
   CATEGORY:=Utilities
   TITLE:=octoprint
   ABI_VERSION:=$(PKG_VERSION)
-  DEPENDS:=+python-dev python-distutils python-pip
+  DEPENDS:=+python-dev python-pip
 endef
 
 define Package/octoprint/description
